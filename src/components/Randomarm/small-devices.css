@@ -1,0 +1,71 @@
+html {
+	display: none;
+}
+.sneakyComic {
+	position: relative;
+	display: block;
+	margin: auto;
+	max-width: 500px;
+	width: 100%;
+	height: auto; 
+	clear: both;
+	top: 90px;
+}
+
+#comic {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+	z-index: -1;
+}
+#posYes {
+	visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0.6;
+	width: 100%;
+	height: auto;
+
+}
+#posNo {
+	visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0.6;
+	width: 100%;
+	height: auto;
+
+}		
+#negYes {
+	visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0.6;
+	width: 100%;
+	height: auto;
+}		
+#negNo {
+	visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0.6;
+	width: 100%;
+	height: auto;
+}	
+
+.btn {
+	position: relative;
+	display: inline-block;
+	max-width: 248px;
+	width: 100%;
+	height: auto;
+	margin: auto;
+	clear: both;
+	top: 615px;
+}
