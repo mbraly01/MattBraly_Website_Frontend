@@ -19,9 +19,9 @@ const [details, setDetails] = useState('')
     <div className="App">
       <BrowserRouter>
         {/* <Route exact path="/" component = { Home }/> */}
-        <Route path="/cia" component = {(props) => <CIALanding {...props} setCName={setCName }/>}/>
-        <Route path="/country" component={(props) => <Country {...props} setCName={setCName} pdf={pdf} details={details}/>}/>
-        <Route path="/countrypage" component={(props) => <CountryPage {...props} cname={cname} pdf={pdf} details={details}/>}/>          
+        <Route path="/cia" component = {(props) => <CIALanding {...props} setCName={setCName} setPdf={setPdf} setDetails={setDetails}/>}/>
+        <Route path="/country" component={(props) => <Country {...props} setCName={setCName} details={details} cname={cname}/>}/>
+        <Route path="/countrypage" component={CountryPage}/>          
         <Route exact path="/randomarm" component = { RandomarmLanding }/>
       </BrowserRouter>
     </div>
