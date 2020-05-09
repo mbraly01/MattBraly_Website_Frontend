@@ -1,33 +1,10 @@
 import React from 'react';
-import Board from './Board.js';
-import Card from './Card.js';
-import { DndProvider } from 'react-dnd';
-import Backend from 'react-dnd-html5-backend';
 import '../styles/Home.css';
 import { useState, useEffect } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 
-const characteristics = [
-    { id: "geo", content: 'Geopolitical' },
-    { id: "dog", content: 'Dog Loving' },
-    { id: "python", content: 'Python' },
-    { id: "react", content: 'React ' }
-];
-
-
-const starterColumns = {
-    "1": {
-        name: 'I am',
-        items: characteristics
-        },
-    "2": {
-        name: 'and I develop with',
-        items: []
-    }
-}
-
-const onDragEnd = (result, columns, setColumns) => {
+const onDragEnd = (result, columns, setColumns, getDirections) => {
     if (!result.destination) return;
     const { source, destination } = result;
     if (source.droppableId !== destination.droppableId) {
@@ -119,41 +96,38 @@ export default function DragNDrop (props) {
                     )
                 })}
             </DragDropContext>
-            
-            <button onClick={console.log(props.columns)}>Hello</button>
         </div>
     )
 }
 
-//         <div>
-//             <main className="flexbox">
-//                 <Board id="board-1" className="board">
-//                     <Card id="card-1" className="card" draggable="true">
-//                         <p>Dog Loving</p>
-//                     </Card>
-//                     <Card id="card-2" className="card" draggable="true">
-//                         <p>Geopolitically inclined</p>
-//                     </Card>
-//                     <Card id="card-2" className="card" draggable="true">
-//                         <p>Crafty</p>
-//                     </Card>
+// // //         <div>
+// // //             <main className="flexbox">
+// // //                 <Board id="board-1" className="board">
+// // //                     <Card id="card-1" className="card" draggable="true">
+// // //                         <p>Dog Loving</p>
+// // //                     </Card>
+// // //                     <Card id="card-2" className="card" draggable="true">
+// // //                         <p>Geopolitically inclined</p>
+// // //                     </Card>
+// // //                     <Card id="card-2" className="card" draggable="true">
+// // //                         <p>Crafty</p>
+// // //                     </Card>
 
-//                 </Board>
-//                 <Board id="board-2" className="board">
-//                     <Card id="card-1" className="card" draggable="true">
-//                         <p>Javascript Developer</p>
-//                     </Card>
-//                     <Card id="card-2" className="card" draggable="true">
-//                         <p>React Developer</p>
-//                     </Card>
-//                     <Card id="card-2" className="card" draggable="true">
-//                         <p>Python Developer</p>
-//                     </Card>    
-//                 </Board>  
-//                 <h2>
-//                     Drag and Drop
-//                 </h2>  
-//             </main>
-//         </div>
-//     )
-// }
+// // //                 </Board>
+// // //                 <Board id="board-2" className="board">
+// // //                     <Card id="card-1" className="card" draggable="true">
+// // //                         <p>Javascript Developer</p>
+// // //                     </Card>
+// // //                     <Card id="card-2" className="card" draggable="true">
+// // //                         <p>React Developer</p>
+// // //                     </Card>
+// // //                     <Card id="card-2" className="card" draggable="true">
+// // //                         <p>Python Developer</p>
+// // //                     </Card>    
+// // //                 </Board>  
+// // //                 <h2>
+// // //                     Drag and Drop
+// // //                 </h2>  
+// // //             </main>
+// // //         </div>
+// // //     )

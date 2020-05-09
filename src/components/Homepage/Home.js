@@ -6,13 +6,12 @@ import { Link } from 'react-router-dom';
 
 export default function Home() {
 
-    const [columns, setColumns] = useState([]);
+    const [ direction, setDirection] = useState('')
 
     const characteristics = [
-        { id: "geo", content: 'Geopolitical' },
-        { id: "dog", content: 'Dog Loving' },
-        { id: "python", content: 'Python' },
-        { id: "react", content: 'React ' }
+        { id: "cia", content: 'Geopolitical' },
+        { id: "randomarm", content: 'Dog Loving' },
+
     ];
     
     const starterColumns = {
@@ -21,20 +20,27 @@ export default function Home() {
             items: characteristics
             },
         "2": {
-            name: 'and I develop with',
+            name: 'fullstack developer',
             items: []
         }
     }
 
-    const reRoute = () => {
-        if (columns['2']['items'] == "Geopolitical") {
-            return (
-                <h2><Link to={{
-                    pathname: `/cia`}}
-                    >See Gallery of Old Logos</Link></h2>
-            )
+    const [columns, setColumns] = useState(starterColumns);
+  
+
+    function getDirection() {
+        try {
+            if(columns['2']['items']['0']['id'] == 'cia') {
+                setDirection('cia')
+            }
+            else if (columns['2']['items']['0']['id'] == 'randomarm') {
+                setDirection('randomarm')
+            }
+        } catch {
+            console.log('error')
         }
-    }     
+    }
+
 
     useEffect(() => {
         setColumns(starterColumns)
@@ -42,8 +48,11 @@ export default function Home() {
 
     return (
         <div>
-            <DragNDrop columns = {columns} setColumns = {setColumns}/>
-            <button onClick={e => reRoute()}>Hello</button>               
+            <DragNDrop columns = {columns} setColumns = {setColumns} getDirection={getDirection}/>
+            {/* <button onClick={e => reRoute()}>Go</button>*/}
+            <h2 onClick={getDirection}><Link to={{
+                    pathname: `${direction}`}}
+                    >Go</Link></h2>
         </div>
     )
 }

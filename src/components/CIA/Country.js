@@ -26,18 +26,7 @@ export default function Country(props) {
         setPdf(data['details'][0])
 
       }
-    // async function getDetails() {
-    //     const configs = {
-    //         methods: 'POST',
-    //         mode: 'cors',
-    //         headers: {'Content-Type': 'application/json'},
-    //         body: JSON.stringify({
-    //             'country': country
-    //         })
-    //     };
-        // const response = await fetch('http://127.0.0.1:5000/details', configs)
-        // const data = await response.json();
-
+      
     useEffect(() => {
         getDetails()
     },[props.match.params.country])

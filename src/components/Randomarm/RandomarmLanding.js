@@ -1,30 +1,30 @@
 import React from 'react';
 import Background from './Media/marmaduke2.jpg';
 import Comic from'./Comic.js';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 
 export default function RandomarmLanding() {
 
-	let is_real = ''
-	let caption = ''
-	let points = 0
+	const [score, setScore] = useState(0)
+	const [isReal, setIsReal] = useState(false)
+	const [caption, setCaption] = useState('')
     async function getComics() {
 		const response = await fetch('http://127.0.0.1:5000/comics')
 		const data = await response.json()
-		caption = data['caption']
-		is_real = data['is_real']
+		setCaption(data['caption'])
+		setIsReal(data['is_real'])
 	}
 
 	function GuessYes() {
-		if (is_real == true) {
-			points++
+		if (isReal == true) {
+			setScore(score + 1)
 		}
 	}
 
 	function GuessNo() {
-		if (is_real == false) {
-			points++
+		if (isReal == false) {
+			setScore(score + 1)
 		}
 	}
 
@@ -38,6 +38,7 @@ export default function RandomarmLanding() {
 			<button onClick={GuessYes}>Yes</button>
 			<button onClick={GuessNo}>No</button>
 			<button onClick={getComics}>get comics</button>
+			<h2>{score}</h2>
 		</div>
 	)
 }
