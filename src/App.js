@@ -8,6 +8,7 @@ import RandomarmLanding from './components/Randomarm/RandomarmLanding.js';
 import Country from './components/CIA/Country';
 import { useState } from 'react';
 import CountryPage from './components/CIA/CountryPage.js';
+import Scoreboard from './components/Randomarm/Scoreboard.js';
 
 export default function App() {
 
@@ -15,10 +16,11 @@ export default function App() {
     <div className="App">
       <BrowserRouter>
         <Route exact path="/" component = { Home }/>
-        <Route path="/cia" component = { CIALanding }/>
-        <Route path="/country/:country" component = { Country }/>
-        <Route path="/countrypage" component = { CountryPage }/>   
-        <Route path="/randomarm" component = { RandomarmLanding }/>      
+        <Route exact path="/cia" component = { CIALanding }/>
+        <Route path="cia/country/:country" component = { Country }/>
+        <Route exact path="/countrypage" component = { CountryPage }/>   
+        <Route exact path="/randomarm" component = { RandomarmLanding }/>
+        <Route exact path="/randomarm/scoreboard" component = { Scoreboard }/>      
       </BrowserRouter>
     </div>
   );

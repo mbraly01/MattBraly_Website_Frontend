@@ -50,9 +50,10 @@ export default function Home() {
         <div>
             <DragNDrop columns = {columns} setColumns = {setColumns} getDirection={getDirection}/>
             {/* <button onClick={e => reRoute()}>Go</button>*/}
-            <h2 onClick={getDirection}><Link to={{
+            <a href={`${direction}`} onClick={getDirection}>Hello</a>
+            {/* <h2 onClick={getDirection}><Link to={{
                     pathname: `${direction}`}}
-                    >Go</Link></h2>
+                    >Go</Link></h2> */}
         </div>
     )
 }

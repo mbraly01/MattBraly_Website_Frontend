@@ -24,7 +24,7 @@ export default function CIALanding() {
         setCountriesButtons(data['country_list'].map((country) => {
 
             return (
-            <Link to={{pathname:`/country/${country['value']}`
+            <Link to={{pathname:`/cia/country/${country['value']}`
             }}>
             <Button>{country['value']}</Button>
             </Link>
@@ -41,7 +41,7 @@ export default function CIALanding() {
                 <Select options={fullArrayCountries}
                     onChange onChange={val => setSearchCountry(val["value"])}
                 />
-            <Link to={{pathname:`/country/${searchCountry}`
+            <Link to={{pathname:`/cia/country/${searchCountry}`
                 }}>
             <Button>Go</Button>
             </Link>
