@@ -6,9 +6,8 @@ import Popup from 'reactjs-popup';
 import TextField from '@material-ui/core/TextField';
 import { Link } from 'react-router-dom';
 
-export default function RandomarmLanding() {
+export default function RandomarmLanding(props) {
 
-	const [seen, setSeen] = useState(0)
 	const [score, setScore] = useState(0)
 	const [isReal, setIsReal] = useState(false)
 	const [caption, setCaption] = useState('')
@@ -16,6 +15,7 @@ export default function RandomarmLanding() {
 	const [comic, setComic] = useState('')
 	const [initials, setInitials] = useState('')
 	const [cOrI, setCOrI] = useState('')
+	const [outOf, setOutOf] = useState(0)
 
 
     async function getComics() {
@@ -62,13 +62,15 @@ export default function RandomarmLanding() {
 			headers: {'Content-Type': 'application/json'},
 			body: JSON.stringify({
 				'initials': initials,
-				'score': score
+				'score': score,
+				'out_of': outOf
 			}),
 		}
 		fetch('http://127.0.0.1:5000/score', configs)
 	}
 
 	function GuessYes() {
+		setOutOf(outOf + 1)
 		if (isReal == 'true') {
 			setCOrI('Correct!')
 			setScore(score + 1)
@@ -79,7 +81,8 @@ export default function RandomarmLanding() {
 	}
 
 	function GuessNo() {
-		if (isReal == false) {
+		setOutOf(outOf + 1)
+		if (isReal == 'false') {
 			setScore(score + 1)
 			setCOrI('Correct!')
 		}
@@ -122,7 +125,7 @@ export default function RandomarmLanding() {
 							fullWidth={true}
 							multiline={true}
 							onChange={e => setCaption(e.target.value)}/>
-							<button onClick={function(event){ close(); Rescue()}}>Hello</button>
+							<button onClick={function(event){ close(); Rescue()}}>Submit</button>
 					</div>
 				)}
 
@@ -132,11 +135,23 @@ export default function RandomarmLanding() {
 			<button onClick={onNo}>No</button> 
 			<Warning onReport={onReport}/>
 			<h2>{score}</h2>
-			<a href='/randomarm/scoreboard'>Hello</a>
-			{/* <Link to='/scoreboard' 
-			onClick={e => submitScore()}>
-				Hello
-			</Link> */}
+
+			<button >Scoreboard</button>
+			<a href='/randomarm/scoreboard' 
+			>See scoreboard</a>
+			<Popup trigger={<button>Submit Score</button>}
+			modal
+			closeOnDocumentClick
+			position='center'>
+				{close => (
+					<div>
+						<TextField value={initials}
+						id="standard-basic" label="Initials"
+						onChange={e=> setInitials(e.target.value)}/>
+						<button onClick={function(event){close(); submitScore()}}>Submit</button>
+					</div>
+				)}
+			</Popup>
 		</div>
 	)
 }

@@ -12,6 +12,7 @@ import Scoreboard from './components/Randomarm/Scoreboard.js';
 
 export default function App() {
 
+
   return (
     <div className="App">
       <BrowserRouter>
