@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import Button from '@material-ui/core/Button'
 import {useState, useEffect } from 'react';
+import { Redirect, Route } from 'react-router-dom';
+
 
 export default function Country(props) {
     
@@ -22,8 +24,8 @@ export default function Country(props) {
         };
         const response = await fetch("http://127.0.0.1:5000/details", configs)
         const data = await response.json()
-        setDetails(data['details'][0])
-        setPdf(data['details'][0])
+        setDetails(data['details'])
+        setPdf(data['details'])
 
       }
       
@@ -33,8 +35,14 @@ export default function Country(props) {
 
     return (
         <div>
-            <div>{details}</div>
-            <Button>Hello</Button>
+            <Route
+            path="/example"
+            component={() => {
+            global.window && (global.window.location.href = {details})
+            return null;
+            }}
+          />
+          <Redirect to={details}/>
         </div>
     )
 
