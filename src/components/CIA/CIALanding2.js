@@ -16,6 +16,7 @@ export default function CIALanding2() {
     const [countriesButtons, setCountriesButtons] = useState([])
     const [fullArrayCountries, setFullArrayCountries] = useState([])
     const [searchCountry, setSearchCountry] = useState('')
+    const [search, setSearch] = useState('')
       
     async function getCountries() {
         const response = await fetch('http://127.0.0.1:5000/countries2');
@@ -23,19 +24,13 @@ export default function CIALanding2() {
         setFullArrayCountries(data['country_list'])
         setCountriesButtons(data['country_list'].map((country) => {
 
+            {console.log(country)}
             return (
-            <a href={country["label"]}>
-                <Button>{country["country"]}</Button>
+
+            <a href={country["value"]}>
+                <Button>{country["label"]}</Button>
             </a>
         )}))
-
-    }
-
-    function getSearch(){
-            const search = fullArrayCountries.filter(country => country.country == searchCountry)
-        return(
-            <a href={search.label}>Hello</a>
-        )
     }
 
     useEffect(() => {
@@ -46,10 +41,12 @@ export default function CIALanding2() {
                 {console.log(fullArrayCountries)}
                 <Select options={fullArrayCountries}
 
-                    onChange={val => setSearchCountry(val["country"])}
+                    onChange={val => setSearchCountry(val["label"]), val => setSearch(val["value"])}
+                    // Use countries route and then filter to find the appropriate label
                 />
-            {getSearch}
+            <a href={search}>
             <Button>Go</Button>
+            </a>
             {countriesButtons}
             </div>
         )

@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import Button from '@material-ui/core/Button'
 import {useState, useEffect } from 'react';
-import { Redirect, Route } from 'react-router-dom';
-
 
 export default function Country(props) {
     
@@ -35,14 +33,8 @@ export default function Country(props) {
 
     return (
         <div>
-            <Route
-            path="/example"
-            component={() => {
-            global.window && (global.window.location.href = {details})
-            return null;
-            }}
-          />
-          <Redirect to={details}/>
+            <div>{details}</div>
+            <Button>Hello</Button>
         </div>
     )
 

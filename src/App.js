@@ -7,6 +7,8 @@ import Country from './components/CIA/Country';
 import CountryPage from './components/CIA/CountryPage.js';
 import Scoreboard from './components/Randomarm/Scoreboard.js';
 import BladesLanding from './components/Blades/BladesLanding.js';
+import CreateAccount from './components/Blades/CreateAccount.js';
+import Login from './components/Blades/Login.js';
 // import GM from './components/Blades/GM.js';
 import CIALanding2 from'./components/CIA/CIALanding2.js';
 
@@ -25,7 +27,9 @@ export default function App() {
         <Route exact path="/countrypage" component = { CountryPage }/>   
         <Route exact path="/randomarm" component = { RandomarmLanding }/>
         <Route exact path="/randomarm/scoreboard" component = { Scoreboard }/>
-        {/* <Route exact path="/blades" component = { BladesLanding }/> */}
+        <Route exact path="/blades" component = { BladesLanding }/>
+        <Route exact path="/blades/create" component = { CreateAccount }/>
+        <Route exact path="/blades/login" component = { Login }/>
         {/* <Route path="/blades       */}
       </BrowserRouter>
     </div>
