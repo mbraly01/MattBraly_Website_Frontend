@@ -11,6 +11,7 @@ export default function Home() {
     const characteristics = [
         { id: "cia", content: 'Geopolitical' },
         { id: "randomarm", content: 'Dog Loving' },
+        { id: "blades", content: "Nerdy" }
 
     ];
     
@@ -35,6 +36,9 @@ export default function Home() {
             }
             else if (columns['2']['items']['0']['id'] == 'randomarm') {
                 setDirection('randomarm')
+            }
+            else if (columns['2']['items']['0']['id'] == 'blades') {
+                setDirection('blades')
             }
         } catch {
             console.log('error')

@@ -9,7 +9,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import bcrypt from 'bcryptjs';
 
 
-export default function CreateAccount() {
+export default function CreateAccount(props) {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -37,7 +37,10 @@ export default function CreateAccount() {
 
             if (data['user'] == 'true') {
                 console.log('success')
-                setResponse(true)
+                props.setLoggedIn(true)
+                props.setUser(username)
+                props.setAccess(true)
+                
             }
 
             else if (data['user'] == 'false') {
@@ -51,6 +54,7 @@ export default function CreateAccount() {
             setPassword('')
             setPassword2('')
         }
+
     }       
 
     const handleClose = () => {
@@ -82,7 +86,7 @@ export default function CreateAccount() {
                 onChange={e => setPassword2(e.target.value)}
             />
             <Button onClick={submitAccount}>Confirm</Button>
-            {response ? <Redirect to="/BladesHome"/> : <SimpleDialogue/>}
+            {props.access ? <Redirect to="/blades/home"/> : <SimpleDialogue/>}
         </div>
 
     )
