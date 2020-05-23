@@ -11,11 +11,12 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 export default function Login(props) {
 
 
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+    const [username, setUsername] = useState('1');
+    const [password, setPassword] = useState('1');
     const [response, setResponse] = useState();
     const [openModal, setOpenModal] = useState(false);
     const [errorMsg, setErrorMsg] = useState('');
+    
     async function submitAccount () {
 
         const configs = {

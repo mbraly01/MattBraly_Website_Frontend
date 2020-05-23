@@ -5,13 +5,13 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Button from '@material-ui/core/Button';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
-import {TextField} from '@material-ui/core/TextField';
+import TextField from '@material-ui/core/TextField';
 
 
 export default function NewGame(props) {
 
-    const [gameName, setGameName] = useState('1234')
-    const [gameCode, setGameCode] = useState('1234')
+    const [gameName, setGameName] = useState('')
+    const [gameCode, setGameCode] = useState('')
     const [open, setOpen] = useState(false)
     async function newGame() {
 
@@ -38,16 +38,16 @@ export default function NewGame(props) {
     function SimpleDialog() {
         return(
             <div>
-                {console.log(props.user)}
-            <Button onClick={newGame}>Button</Button>
-            <Dialog onClose={handleClose} open={open}>
-                <DialogTitle>Your Game Code</DialogTitle>
-                <DialogContentText> Your game code is:{gameCode}</DialogContentText>
-                <CopyToClipboard text={gameCode}>
-                    <Button>Copy to Clipboard</Button>
-                </CopyToClipboard>
-                <Button onClick={handleClose}>Back</Button>
-            </Dialog>
+                <TextField onChange={e => setGameName(e.target.value)}>Game Name</TextField>
+                <Button onClick={newGame}>Button</Button>
+                <Dialog onClose={handleClose} open={open}>
+                    <DialogTitle>Your Game Code</DialogTitle>
+                    <DialogContentText> Your game code is:{gameCode}</DialogContentText>
+                    <CopyToClipboard text={gameCode}>
+                        <Button>Copy to Clipboard</Button>
+                    </CopyToClipboard>
+                    <Button onClick={handleClose}>Back</Button>
+                </Dialog>
             </div>
         )
     }
