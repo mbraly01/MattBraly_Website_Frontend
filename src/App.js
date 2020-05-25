@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, BrowserRouter } from 'react-router-dom';
-import Home from './components/Homepage/Home.js';
+import Landing from './components/Homepage/Landing.js';
 import CIALanding from './components/CIA/CIALanding.js';
 import RandomarmLanding from './components/Randomarm/RandomarmLanding.js';
 import Country from './components/CIA/Country';
@@ -32,9 +32,9 @@ function App() {
 
   return (
     <div className="App">
-      <CookiesProvider>
+      {/* <CookiesProvider> */}
         <BrowserRouter>
-          <Route exact path="/" component = { Home }/>
+          <Route exact path="/" component = { Landing }/>
           <Route exact path="/cia" component = { CIALanding2 }/>
           <Route path="/cia/country/:country" component = { Country }/>
           <Route exact path="/countrypage" component = { CountryPage }/>   
@@ -47,7 +47,7 @@ function App() {
           <Route exact path="/blades/home" component = {(props) => <BladesHome {...props} setLoggedIn={setLoggedIn} setUser={setUser} loggedIn={loggedIn} user={user}/>}/> 
           <Route exact path="/blades/newgame" component = {(props) => <NewGame {...props} loggedIn={loggedIn} user={user}/>}/> */}
         </BrowserRouter>
-      </CookiesProvider>
+      {/* </CookiesProvider> */}
     </div>
   );
 }
