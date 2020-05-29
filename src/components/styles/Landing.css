@@ -1,0 +1,92 @@
+@font-face {
+    font-family: 'roboto-m';
+    src: url('../Homepage/roboto-thin-webfont.woff2') format('woff2'),
+         url('../Homepage/roboto-thin-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'futura-d';
+  src: url('./font.woff2') format('woff2'),
+       url('./font.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.holder{
+    background-color: rgb(243, 243, 243);
+}
+
+div {
+ font-family: 'roboto-m';
+}
+
+@media(max-width: 1920px) {
+.matt {
+    padding-top: 10px;
+    font-size: 100px;
+    font-family: 'futura-d';
+}
+
+.grid {
+        display: flex;
+        flex-direction: row;
+        /* grid-template-columns: 100px 100px 100px; */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        left: 640px
+}
+
+ .left {
+    position: fixed;
+    top: 235px;
+    left: 637px;
+    font-family: 'futura-d';
+  }
+  .right {
+      position: fixed;
+      top: 210px;
+      right: 490px;
+      font-family: 'futura-d';
+  }
+
+  .dragNdrop {
+      position: fixed;
+      top: 212px;
+      right: 695px;
+  }
+
+ .goButton {
+   margin-top: 50px;
+    padding: 16;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 125;
+    min-height: 60px;
+     background-color: blue;
+    color: white;
+    /*
+    position: fixed;
+    top: 480px;
+    right: 700px;
+  } */
+ }
+  a {
+    font-size: medium
+  }
+  .goButton:link, .goButton:visited {
+    background-color: #f44336;
+    color: white;
+    padding: 18px 55px;
+  }
+  
+  .goButton:hover, .goButton:active {
+    background-color: #98ff98;
+    color: blue;
+    transition: background-color 0.2s ease-in-out;
+
+  }
+  
+}

@@ -1,19 +1,24 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
+import '../styles/Randomarm.css';
 
-export default function ScoreBoard() {
+
+export default function Scoreboard() {
 
     const [board, setBoard] = useState('')
     async function getBoard() {
 
-        const response = await fetch('http://127.0.0.1:5000/board')
+        const response = await fetch('http://flask-env.eba-t39hsrmy.us-east-2.elasticbeanstalk.com/board')
         const data = await response.json()
         console.log(data)
         setBoard(data['board'].map((person) => {
             return (
-                <div>
-                    <h2 className='right'>{person[1]}</h2>
-                    <h2 className='left'>{person[0]}/{person[2]}</h2>
+                <div className="scoreboard">
+                    <span className='rmspan'>
+                    <h2 className='rmright'>{person[1]}</h2>
+                    </span><span className='rmspan'>
+                    <h2 className='rmleft'>{person[0]}/{person[2]}</h2>
+                    </span>
                 </div>
 
             )
@@ -25,7 +30,7 @@ export default function ScoreBoard() {
     },[])
 
         return(
-            <div>
+            <div className="scoreboard">
             {board}
             </div>
         )

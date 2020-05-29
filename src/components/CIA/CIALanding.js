@@ -7,29 +7,27 @@ import { useSelect } from 'react-select-search';
 import SelectSearch from 'react-select-search';
 import Select from 'react-select';
 
-export default function CIALanding() {
+export default function CIALanding2() {
 
 
     // countriesButton holds all the buttons
     // countriesArray holds all the country names for the select search
     // countriesValue holds all the values(not entirely clear why this is necessary
     const [countriesButtons, setCountriesButtons] = useState([])
-    const [fullArrayCountries, setFullArrayCountries] = useState(["Italy"])
+    const [fullArrayCountries, setFullArrayCountries] = useState([])
     const [searchCountry, setSearchCountry] = useState('')
+    const [search, setSearch] = useState('')
       
     async function getCountries() {
-        const response = await fetch('http://127.0.0.1:5000/countries');
+        const response = await fetch('http://flask-env.eba-t39hsrmy.us-east-2.elasticbeanstalk.com/countries2');
         const data = await response.json();
         setFullArrayCountries(data['country_list'])
         setCountriesButtons(data['country_list'].map((country) => {
-
             return (
-            <Link to={{pathname:`/cia/country/${country['value']}`
-            }}>
-            <Button>{country['value']}</Button>
-            </Link>
+            <a className='buttons' href={country["value"]}>
+                <Button>{country["label"]}</Button>
+            </a>
         )}))
-
     }
 
     useEffect(() => {
@@ -37,13 +35,15 @@ export default function CIALanding() {
     },[])
         return (
             <div>
+                <h1>CIA World Factbook one-pagers</h1>
+                <div className='select-search'>
                 <Select options={fullArrayCountries}
-                    onChange onChange={val => setSearchCountry(val["value"])}
-                />
-            <Link to={{pathname:`/cia/country/${searchCountry}`
-                }}>
+                    onChange={val => setSearchCountry(val["label"]), val => setSearch(val["value"])}
+                    // Use countries route and then filter to find the appropriate label
+                /></div>
+            <a href={search}>
             <Button>Go</Button>
-            </Link>
+            </a>
             {countriesButtons}
             </div>
         )

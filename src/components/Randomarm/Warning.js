@@ -1,17 +1,17 @@
 import React from 'react';
 import {Popup } from 'semantic-ui-react'
-import './Warning.css'
+import '../styles/Warning.css'
 
 export default function Warning(props) {
     return (
         <Popup className='popup'
             trigger={
-                <button onClick={props.onReport}>Report</button>
+                <button className="rmbutton report" onClick={props.onReport}>Report</button>
             }
             >
             <Popup.Header>Don't Click Yet</Popup.Header>
             <Popup.Content>
-                <h3>Watch out!</h3>
+                <h3>See if you can rescue it first</h3>
             </Popup.Content>
         </Popup>
     )

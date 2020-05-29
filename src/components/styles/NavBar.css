@@ -1,0 +1,20 @@
+
+@media(max-width: 1920px) {
+
+    .Link {
+        color: white;
+        height: 400px;
+        width: 400px;
+        padding: 14px 16px;
+        margin: 0 10px;
+        background-color:#f44336;
+
+        transition: background-color 0.2s ease-in-out;
+    }
+
+    .Link:hover {
+        color: blue;
+        background-color: #98ff98;
+        text-decoration: none;
+    }
+}

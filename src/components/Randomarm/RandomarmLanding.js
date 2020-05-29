@@ -5,6 +5,9 @@ import Warning from './Warning.js';
 import Popup from 'reactjs-popup';
 import TextField from '@material-ui/core/TextField';
 import { Link } from 'react-router-dom';
+import '../styles/Randomarm.css';
+import NavBar from '../NavBar.js';
+import Scoreboard from './Scoreboard.js';
 
 export default function RandomarmLanding(props) {
 
@@ -19,7 +22,7 @@ export default function RandomarmLanding(props) {
 
 
     async function getComics() {
-		const response = await fetch('http://127.0.0.1:5000/comics')
+		const response = await fetch('http://flask-env.eba-t39hsrmy.us-east-2.elasticbeanstalk.com/comics')
 		const data = await response.json()
 		setComic(data['comic'])
 		setComicLoc(data['comic_loc'])
@@ -38,7 +41,7 @@ export default function RandomarmLanding(props) {
 				'caption': caption
 			}),
 		}
-		fetch('http://127.0.0.1:5000/rescue', configs)
+		fetch('http://flask-env.eba-t39hsrmy.us-east-2.elasticbeanstalk.com/rescue', configs)
 	}
 
 	async function Report() {
@@ -51,7 +54,7 @@ export default function RandomarmLanding(props) {
 				'comic': comic
 			}),
 		}
-		fetch('http://127.0.0.1:5000/report', configs)
+		fetch('http://flask-env.eba-t39hsrmy.us-east-2.elasticbeanstalk.com/report', configs)
 	}
 
 	async function submitScore() {
@@ -66,7 +69,7 @@ export default function RandomarmLanding(props) {
 				'out_of': outOf
 			}),
 		}
-		fetch('http://127.0.0.1:5000/score', configs)
+		fetch('http://flask-env.eba-t39hsrmy.us-east-2.elasticbeanstalk.com/score', configs)
 	}
 
 	function GuessYes() {
@@ -112,9 +115,16 @@ export default function RandomarmLanding(props) {
 
 	return(
 		<div>
-			<Comic comicLoc={comicLoc} caption={caption}/>
+			<div>
+			<NavBar/>
+			<h1 className='title'>Randomarm</h1>
+			<h2 className='intro-big'>Guess to see which marmaduke captions match the comics*</h2>
+			<h5 className='intro'>Some of the comics are a little messed up. </h5>
+			<h5 className='intro'>You can rescue them if you believe you know what the say</h5>
+			<h5 className='intro'>OR you can report them if they are beyond saving</h5>
+			<Comic className='comic' comicLoc={comicLoc} caption={caption}/>
 
-			<Popup trigger={<button>Rescue Comic</button>}
+			<Popup trigger={<button className="rmbutton rescue">Rescue Comic</button>}
 				modal
 				closeOnDocumentClick
 				position='right center'>
@@ -131,15 +141,12 @@ export default function RandomarmLanding(props) {
 
 			</Popup>
 
-			<button onClick={onYes}>Yes</button>
-			<button onClick={onNo}>No</button> 
+			<button className="rmbutton yes" onClick={onYes}>Yes</button>
+			<button className="rmbutton no" onClick={onNo}>No</button> 
 			<Warning onReport={onReport}/>
 			<h2>{score}</h2>
 
-			<button >Scoreboard</button>
-			<a href='/randomarm/scoreboard' 
-			>See scoreboard</a>
-			<Popup trigger={<button>Submit Score</button>}
+			<Popup trigger={<button className='rmbutton submit'>Submit Score (Scoreboard Below)</button>}
 			modal
 			closeOnDocumentClick
 			position='center'>
@@ -152,6 +159,15 @@ export default function RandomarmLanding(props) {
 					</div>
 				)}
 			</Popup>
+			{/* <div>
+			<a href='/randomarm/scoreboard' 
+			className='rmbutton scoreboard'>Scoreboard</a>
+			</div> */}
+			
+		</div>
+		<h2></h2>
+		<h1 className="title">Scoreboard</h1>
+		<Scoreboard/>
 		</div>
 	)
 }

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
-import './DragNDrop.css';
+import '../styles/Landing.css'
 
 const onDragEnd = (result, columns, setColumns) => {
   if (!result.destination) return;
@@ -40,16 +40,17 @@ const onDragEnd = (result, columns, setColumns) => {
 };
 
 export default function DragNDrop(props) {
-  const [columns, setColumns] = useState(props.columns);
   return (
-    <div style={{displey: 'flex', justifyContent:'center', height: '100%'}}>>
+    <div 
+    // style={{displey: 'flex', justifyContent:'center', height: '100%'}}
+    >
       <DragDropContext
         onDragEnd={result => onDragEnd(result, props.columns, props.setColumns)}
       >
         {Object.entries(props.columns).map(([columnId, column], index) => {
           return (
             <div
-            style={{display: 'flex', justifyContent: ' center', height: '100%'}}
+            // style={{display: 'flex', justifyContent: ' center', height: '100%'}}
               key={columnId}
             >
               <div style={{ margin: 8 }}>
@@ -60,9 +61,10 @@ export default function DragNDrop(props) {
                         {...provided.droppableProps}
                         ref={provided.innerRef}
                         style={{
+                          outlineStyle:'dashed',
                           background: snapshot.isDraggingOver
                             ? "lightblue"
-                            : "lightgrey",
+                            : "white",
                           padding: 4,
                           width: 125,
                           minHeight: 60
@@ -84,11 +86,12 @@ export default function DragNDrop(props) {
                                     style={{
                                       userSelect: "none",
                                       padding: 16,
-                                      margin: "0 0 8px 0",
+                                      marginTop:'5px',
+                                      marginBottom: '5px',
                                       minHeight: "50px",
                                       backgroundColor: snapshot.isDragging
                                         ? "#263B4A"
-                                        : "#456C86",
+                                        : "black",
                                       color: "white",
                                       ...provided.draggableProps.style
                                     }}
@@ -111,7 +114,11 @@ export default function DragNDrop(props) {
           );
         })}
       </DragDropContext>
+        <div style={{ marginTop: 25}}>
+      <a className='goButton' href={`${props.direction}`} onClick={props.getDirection}>Go</a>
+  </div>
     </div>
+
   );
 }
 

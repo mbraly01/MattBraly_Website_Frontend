@@ -2,8 +2,10 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import DragNDrop from './DragNDrop.js';
 import { Link } from 'react-router-dom';
-import NavBar from '../NavBar.js'
-import './Home.css';
+import NavBar from '../NavBar.js';
+import Button from '@material-ui/core/Button';
+import '../styles/Landing.css';
+
 
 
 export default function Landing() {
@@ -59,18 +61,25 @@ export default function Landing() {
     },[])
 
     return (
+
         <div>
-        <h1>Matt Braly</h1>
-        <h2>Drag and Drop</h2>
-        <div style={{minWidth:'500px'}}>
-        <span><DragNDrop columns = {columns} setColumns = {setColumns} getDirection={getDirection} style={{disply: 'table-row'}}/>
-            </span>
-            {/* <button onClick={e => reRoute()}>Go</button>*/}
-            <a href={`${direction}`} onClick={getDirection}>Go</a>
-            {/* <h2 onClick={getDirection}><Link to={{
-                    pathname: `${direction}`}}
+        <NavBar/>
+        <h1 className='matt'>Matt Braly</h1>
+        <h4>(Drag and Drop)</h4>
+        <div className='container grid'>
+            <h2 className='left'>I am a</h2>
+            <div className='dragNdrop'>
+                <DragNDrop columns = {columns} setColumns = {setColumns} getDirection={getDirection}
+                direction={direction} getDirection={getDirection}/>
+                    {/* <button onClick={e => reRoute()}>Go</button>*/}
+                    
+                    {/* <h2 onClick={getDirection}><Link to={{
+                            pathname: `${direction}`}}
                     >Go</Link></h2> */}
+            </div>
+        <h2 className='right'>Full stack developer</h2>
         </div>
+        {/* <a className='goButton' href={`${direction}`} onClick={getDirection}>Go</a> */}
         </div>
     )
 }

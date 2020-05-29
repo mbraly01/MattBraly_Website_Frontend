@@ -1,0 +1,105 @@
+@font-face {
+    font-family: 'Milkshake';
+    src: url("./Milkshake.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'Beachwood';
+    src: url("./Beachwood_Sans.otf") format("opentype");
+}
+
+.comic {
+
+
+
+}
+
+.caption {
+    font-family: 'Milkshake';
+    margin:0;
+    padding:0;
+}
+
+.title {
+    font-family: 'Milkshake';
+    font-size: 100px;
+    padding-top: 20px;
+    margin: 0px;
+    padding-bottom: 0px;
+}
+
+.intro {
+    font-family: 'Beachwood';
+    padding-top: 0px;
+    margin: 0px;
+    margin: 0px;
+}
+
+.intro-big {
+    font-family: 'Beachwood';
+    padding-bottom: 10px;
+    margin: 0px;
+}
+
+.comic {
+    padding: 0;
+    margin: 0;
+    max-width: 300px;
+}
+
+.rmbutton {
+    border-radius: 12px;
+    font-family: 'Beachwood';
+
+}
+
+.no {
+    font-size: 32px;
+}
+
+.yes {
+    font-size: 32px;
+}
+
+.rescue {
+    font-size: 30px;
+}
+
+.report {
+    font-size: 30px; 
+}
+
+.submit {
+    font-size: 30px;
+}
+
+.scoreboard {
+    color: #f44336;
+    bottom: 0px;
+    font-family: 'Beachwood';
+}
+
+.rmspan {
+    font-family: 'Beachwood';
+}
+
+.rmright {
+    font-size: 100px;
+    display: inline;
+    font-family: 'Beachwood';
+}
+
+.rmleft {
+    font-size: 100px;
+    display: inline;
+    padding-left: 20%;
+    font-family: 'Beachwood';
+
+}
+
+.scoreboardtitle {
+
+    font-family: 'Milkshake';
+    font: 50px;
+}
+
