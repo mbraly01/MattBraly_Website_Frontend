@@ -1,3 +1,86 @@
-h1 {
-    display: inline;
+@font-face {
+    font-family: 'roboto-m';
+    src: url('../Homepage/roboto-thin-webfont.woff2') format('woff2'),
+         url('../Homepage/roboto-thin-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
+
+@font-face {
+  font-family: 'futura-d';
+  src: url('./font.woff2') format('woff2'),
+       url('./font.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1 {
+    font-family: 'futura-d';
+}
+h2 {
+    font-family: 'futura-d';
+}
+
+h3 {
+    font-family: 'futura-d'
+}
+
+h4 {
+    font-family: 'roboto-m';
+}
+
+li {
+    font-family: 'roboto-m';
+}
+
+.experience {
+    flex: 70%;
+    padding-right: 20px;
+}
+
+.skills {
+    flex: 30%;
+    padding: 20px;
+
+}
+
+.header {
+    background: #f44336;
+    padding: 10px;
+    text-align: center;
+    float:left;
+    width: 100%;
+    text-align: left;
+}
+
+.headerh1 {
+    color: white;
+    font-size: 100px;
+
+}
+
+.headerh2 {
+    color: white;
+    font-size: 50px;
+}
+.leftcolumn {
+    flex: 70%;
+    max-width: 60%;
+    padding-right: 20px;
+    background-color: #f1f1f1;
+    float: left;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.rightcolumn {
+    padding: 20px;
+    text-align: left;
+    float: left;
+
+}
+
+.linkedIn {
+    padding-left: 20px
+}
+

@@ -1,5 +1,17 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const cors = require('cors');
+
+require('dotenv').config();
+
+const app = express();
+const port = process.env.PORT || 5000;
+
+app.use(cors());
+app.use(express.json());
+
+app.listen(port, () => {
+    console.log(`Server is running on ports: ${port}`);
 
 
 router.post('/', function(req, res, next) {

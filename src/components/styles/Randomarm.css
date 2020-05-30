@@ -55,22 +55,28 @@
 
 .no {
     font-size: 32px;
+    background-color: purple;
+    color: white;
 }
 
 .yes {
     font-size: 32px;
+    background-color: yellowgreen
 }
 
 .rescue {
     font-size: 30px;
+    background-color: lightseagreen;
 }
 
 .report {
     font-size: 30px; 
+    background-color: orangered;
 }
 
 .submit {
     font-size: 30px;
+    background-color:yellow;
 }
 
 .scoreboard {
@@ -103,3 +109,6 @@
     font: 50px;
 }
 
+.score {
+    font-family: 'Beachwood';
+}

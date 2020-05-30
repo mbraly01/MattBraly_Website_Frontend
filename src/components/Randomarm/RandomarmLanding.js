@@ -109,6 +109,10 @@ export default function RandomarmLanding(props) {
 		getComics()
 	}
 
+	function refreshPage() {
+		window.location.reload(false);
+	  }
+
 	useEffect(() => {
 		getComics()
 	},[])
@@ -144,7 +148,7 @@ export default function RandomarmLanding(props) {
 			<button className="rmbutton yes" onClick={onYes}>Yes</button>
 			<button className="rmbutton no" onClick={onNo}>No</button> 
 			<Warning onReport={onReport}/>
-			<h2>{score}</h2>
+			<h2 className="score">{score}</h2>
 
 			<Popup trigger={<button className='rmbutton submit'>Submit Score (Scoreboard Below)</button>}
 			modal
@@ -155,7 +159,7 @@ export default function RandomarmLanding(props) {
 						<TextField value={initials}
 						id="standard-basic" label="Initials"
 						onChange={e=> setInitials(e.target.value)}/>
-						<button onClick={function(event){close(); submitScore()}}>Submit</button>
+						<button onClick={function(event){close(); submitScore(); refreshPage()}}>Submit</button>
 					</div>
 				)}
 			</Popup>
