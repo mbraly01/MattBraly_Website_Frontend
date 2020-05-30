@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'futura-d';
+    src: url('./font.woff2') format('woff2'),
+         url('./font.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+.select-search {
+    border-color: white;
+    text-align: center;
+    max-width: 400px;
+    margin-left: 38%;
+    float: left;
+    display:inline; 
+}
+
+span {
+    text-align: center;
+    display: inline;
+}
+
+.css-2b097c-container {
+    width: 20%;
+}
+
+/* .select-search  */
+
+.go-button {
+    float:left; 
+    display:inline;
+}
+
+.cia-title {
+    font-family: 'futura-d';
+}
+
+.spacer {
+    padding-top: 100px;
+    display: block;
+}
+
+.button-holder {
+    display: grid;
+    grid-gap: 0px 0px;
+    grid-template-columns: auto auto auto auto auto;
+    padding: 10px;
+}
+  

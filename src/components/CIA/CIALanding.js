@@ -1,13 +1,15 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import Country from './Country.js';
 import { Link } from 'react-router-dom'
 import Button from '@material-ui/core/Button';
 import { useSelect } from 'react-select-search';
 import SelectSearch from 'react-select-search';
 import Select from 'react-select';
+import NavBar from '../NavBar.js';
+import '../styles/CIA.css';
 
-export default function CIALanding2() {
+
+export default function CIALanding() {
 
 
     // countriesButton holds all the buttons
@@ -35,16 +37,25 @@ export default function CIALanding2() {
     },[])
         return (
             <div>
-                <h1>CIA World Factbook one-pagers</h1>
-                <div className='select-search'>
-                <Select options={fullArrayCountries}
+                <NavBar/>
+                <h1 className="cia-title">CIA World Factbook one-pagers</h1>
+                <Select 
+                className='select-search'
+                options={fullArrayCountries}
                     onChange={val => setSearchCountry(val["label"]), val => setSearch(val["value"])}
                     // Use countries route and then filter to find the appropriate label
-                /></div>
-            <a href={search}>
-            <Button>Go</Button>
+                />
+            <a className='go-button' href={search}>
+            <Button 
+            variant='outlined'
+            size='large'
+            >Go</Button>
             </a>
+            <div className='spacer'>     
+            <div className='button-holder'>
             {countriesButtons}
+            </div>
+            </div>
             </div>
         )
 

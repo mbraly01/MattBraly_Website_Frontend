@@ -8,13 +8,15 @@ export default function NavBar() {
 
     return (
         <span className='topNav'>
-            <div className='rightNav'>
                 <Link to='/' className='Link'>Home</Link>
                 <Link to='/pro' className='Link'>Resume</Link>
-                <Link to='/cia' className='Link'>CIA</Link>
-                <Link to='/randomarm' className='Link'>Randomarm</Link>
-            </div>
-            
+                <div class="dropdown">
+                    <button class="dropdown-button">Projects</button>
+                    <div class="dropdown-content">
+                        <a href="http://www.mattbraly.biz/randomarm">Randomarm</a>
+                        <a href="http://www.mattbraly.biz/cia">CIA one pagers</a>
+                    </div>
+                    </div>
         </span>
     )
 }

@@ -37,16 +37,16 @@ export default function Landing() {
     function getDirection() {
         try {
             if(columns['one']['items']['0']['id'] == 'cia') {
-                setDirection('cia')
+                setDirection('http://www.mattbraly.biz/cia')
             }
             else if (columns['one']['items']['0']['id'] == 'randomarm') {
-                setDirection('randomarm')
+                setDirection('http://www.mattbraly.biz/randomarm')
             }
             else if (columns['one']['items']['0']['id'] == 'blades') {
-                setDirection('blades')
+                setDirection('http://www.mattbraly.biz/blades')
             }
             else if (columns['one']['items']['0']['id'] == 'pro') {
-                setDirection('pro')
+                setDirection('http://www.mattbraly.biz/pro')
             }
             console.log('works')
         } catch {
@@ -77,7 +77,7 @@ export default function Landing() {
                             pathname: `${direction}`}}
                     >Go</Link></h2> */}
             </div>
-        <h2 className='right'>Full stack developer</h2>
+        <h2 className='right'>Full Stack Developer</h2>
         </div>
         {/* <a className='goButton' href={`${direction}`} onClick={getDirection}>Go</a> */}
         </div>
