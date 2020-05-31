@@ -65,7 +65,6 @@ export default function Landing() {
         <div>
         <NavBar/>
         <h1 className='matt'>Matt Braly</h1>
-        <h4>(Drag and Drop)</h4>
         <div className='container grid'>
             <h2 className='left'>I am a</h2>
             <div className='dragNdrop'>

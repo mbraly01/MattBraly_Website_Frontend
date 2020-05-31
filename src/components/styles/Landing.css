@@ -30,32 +30,39 @@ div {
 }
 
 .grid {
-        display: flex;
+        /* display: grid;
         flex-direction: row;
-        /* grid-template-columns: 100px 100px 100px; */
+        /* grid-template-columns: 100px 100px 100px;
         align-items: center;
         justify-content: center;
         position: fixed;
-        left: 640px
+        left: 640px */
+
+        display: inline-grid;
+        grid-gap: 0px 0px;
+        grid-template-columns: auto auto auto;
+        padding-left: 9.5%;
 }
 
  .left {
-    position: fixed;
+    /* position: fixed;
     top: 300px;
     left: 637px;
-    font-family: 'futura-d';
+    font-family: 'futura-d'; */
+    padding-top: 40%;
   }
   .right {
-      position: fixed;
+      /* position: fixed;
       top: 275px;
       right: 490px;
-      font-family: 'futura-d';
+      font-family: 'futura-d'; */
   }
 
   .dragNdrop {
-      position: fixed;
+    text-align: center;
+      /* position: fixed;
       top: 277px;
-      right: 695px;
+      right: 695px; */
   }
 
  .goButton {
@@ -67,6 +74,7 @@ div {
     min-height: 60px;
      background-color: blue;
     color: white;
+    font-family: 'roboto-m';
     /*
     position: fixed;
     top: 480px;

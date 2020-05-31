@@ -44,6 +44,7 @@ export default function DragNDrop(props) {
     <div 
     // style={{displey: 'flex', justifyContent:'center', height: '100%'}}
     >
+    <h4 className="explain">(Drag and Drop)</h4>
       <DragDropContext
         onDragEnd={result => onDragEnd(result, props.columns, props.setColumns)}
       >
