@@ -53,11 +53,11 @@ export default function DragNDrop(props) {
             // style={{display: 'flex', justifyContent: ' center', height: '100%'}}
               key={columnId}
             >
-              <div style={{ margin: 8 }}>
+              <div className="droppable">
                 <Droppable droppableId={columnId} key={columnId}>
                   {(provided, snapshot) => {
                     return (
-                      <div
+                      <div className="column"
                         {...provided.droppableProps}
                         ref={provided.innerRef}
                         style={{

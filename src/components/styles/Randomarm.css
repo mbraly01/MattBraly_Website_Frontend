@@ -54,24 +54,26 @@
 }
 
 .no {
-    font-size: 32px;
+    font-size: 40px;
     background-color: purple;
     color: white;
 }
 
 .yes {
-    font-size: 32px;
+    font-size: 40px;
     background-color: yellowgreen
 }
 
 .rescue {
     font-size: 30px;
     background-color: lightseagreen;
+    margin-right: 50px;
 }
 
 .report {
     font-size: 30px; 
     background-color: orangered;
+    margin-left: 50px;
 }
 
 .submit {

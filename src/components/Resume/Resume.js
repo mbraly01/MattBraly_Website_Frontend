@@ -35,7 +35,7 @@ export default function Resume() {
                         <ul>
                             <li>Build, manage, clean, and maintain a comprehensive database of 10k+ prospective and current clients and partners</li>
                             <li>Aid in the development of creative briefs (research and analysis) and continually research new technological developments in AR (augmented reality) and virtual reality (VR)</li>
-                            <li>mplement and execute marketing plans through collaboration with clients, in-house departments (i.e., creative direction and art/design) and third-party contractors</li>
+                            <li>Implement and execute marketing plans through collaboration with clients, creative direction and art/design, and third-party contractors</li>
                             <li>Conduct industry research on virtual reality and augmented reality technology (psychology, human interaction, marketing, retail environment) and develop content and slides for client generation presentations</li>
                         </ul>
                     </div>
@@ -49,7 +49,7 @@ export default function Resume() {
                         </ul>
                     </div>
                     <div className="rams">
-                        <h2>University of Rhode Island - Digital Innovation Sepcialist, Admissions</h2>
+                        <h2>University of Rhode Island - Digital Innovation Specialist, Admissions</h2>
                         <h3>2015-2016</h3>
                         <p>Renowned, public research university for the state of Rhode Island.</p>
                         <ul>

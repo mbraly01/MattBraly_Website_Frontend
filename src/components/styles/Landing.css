@@ -41,20 +41,20 @@ div {
 
  .left {
     position: fixed;
-    top: 235px;
+    top: 300px;
     left: 637px;
     font-family: 'futura-d';
   }
   .right {
       position: fixed;
-      top: 210px;
+      top: 275px;
       right: 490px;
       font-family: 'futura-d';
   }
 
   .dragNdrop {
       position: fixed;
-      top: 212px;
+      top: 277px;
       right: 695px;
   }
 
@@ -88,5 +88,24 @@ div {
     transition: background-color 0.2s ease-in-out;
 
   }
+
+  .droppable {
+    margin: 8px;
+  }
+
+  .column {
+    outline-style:'dashed';
+    padding: 4;
+    width: 125;
+    min-height: 60;
+  }
   
+  .drag {
+    user-select: none;
+    padding: 16;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    min-height: 50px;
+    color: white;
+}
 }

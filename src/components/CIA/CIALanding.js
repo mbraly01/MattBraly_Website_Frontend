@@ -41,6 +41,8 @@ export default function CIALanding() {
                 <h1 className="cia-title">CIA World Factbook one-pagers</h1>
                 <Select 
                 className='select-search'
+                defaultValue="Search"
+                name="Search"
                 options={fullArrayCountries}
                     onChange={val => setSearchCountry(val["label"]), val => setSearch(val["value"])}
                     // Use countries route and then filter to find the appropriate label

@@ -122,13 +122,17 @@ export default function RandomarmLanding(props) {
 			<div>
 			<NavBar/>
 			<h1 className='title'>Randomarm</h1>
-			<h2 className='intro-big'>Guess to see which marmaduke captions match the comics*</h2>
-			<h5 className='intro'>Some of the comics are a little messed up. </h5>
-			<h5 className='intro'>You can rescue them if you believe you know what the say</h5>
-			<h5 className='intro'>OR you can report them if they are beyond saving</h5>
+			<h2 className='intro-big'>A game for Dog-loving Full Stack Developers</h2>
+			<h2 className='intro-big'>Guess if the caption matches the comic shown*</h2>
+			<h5 className='intro'>*If the caption is misspelled, please fix it, or if it is beyond fixing, please report it.</h5>
+			<h5 className="intro">To see your score, scroll down</h5>
+			<h5 className="intro">Marmaduke was created by Brad Anderson</h5>
+
+			{/* <h5 className='intro'>You can fix them if you believe you know what they say</h5>
+			<h5 className='intro'>OR you can report them if they are beyond saving</h5> */}
 			<Comic className='comic' comicLoc={comicLoc} caption={caption}/>
 
-			<Popup trigger={<button className="rmbutton rescue">Rescue Comic</button>}
+			<Popup trigger={<button className="rmbutton rescue">Fix Comic</button>}
 				modal
 				closeOnDocumentClick
 				position='right center'>
