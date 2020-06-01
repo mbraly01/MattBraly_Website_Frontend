@@ -62,7 +62,7 @@ export default function Landing() {
 
     return (
 
-        <div>
+        <div className="big">
         <NavBar/>
         <h1 className='matt'>Matt Braly</h1>
         <div className='container grid'>

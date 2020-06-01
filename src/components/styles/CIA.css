@@ -50,6 +50,13 @@
 }
 
 @media(max-width: 400px) {
+
+    .cia-title {
+        padding-right: 10%;
+        float: center;
+        padding-top: 20%;
+        font-size: 100%;
+    }
     .button-holder {
         display: grid;
         grid-template-columns: auto auto auto;
@@ -66,4 +73,15 @@
     float: left;
     display:inline; 
 }
+
+.topNav {
+    display: grid;
+    grid-gap: 0px 13%;
+    grid-template-columns: auto auto auto;
+    float:left;
+    padding-left: 0px;
+    /* padding-right: 20px; */
+    /* margin-right: 30px; */
+}
+
 }

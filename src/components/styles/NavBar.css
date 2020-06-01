@@ -32,7 +32,7 @@
         display: grid;
         grid-gap: 0px 0px;
         grid-template-columns: auto auto auto;
-        padding: 10px;
+        /* padding: 10px; */
     }
 
     .dropdown {
@@ -73,10 +73,10 @@
       .dropdown-button {
         color: white;
         padding: 14px 18px;
-        margin: 0 10px;
         background-color:#f44336;
         border: none;
         width: 100%;
+        margin-left:20%;
 
         transition: background-color 0.2s ease-in-out;
         font-family: 'roboto-m';
@@ -92,7 +92,12 @@
     grid-template-columns: auto auto auto;
     float:left;
     padding-left: 0px;
-    padding-right: 20px;
-    margin-right: 30px;
-}
+    /* padding-right: 20px; */
+    /* margin-right: 30px; */
+  }
+  .dropdown-content a {
+    font-size: 12px;
+    text-align: left;
+  }
+
 }

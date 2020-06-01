@@ -20,7 +20,14 @@
 
 div {
  font-family: 'roboto-m';
+
 }
+
+.big {
+  width: 100%;
+}
+
+
 
 @media(max-width: 1920px) {
 .matt {
@@ -116,4 +123,8 @@ div {
     min-height: 50px;
     color: white;
 }
+}
+
+@media(max-width:400px) {
+
 }
