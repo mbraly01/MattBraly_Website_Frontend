@@ -80,7 +80,7 @@ export default function DragNDrop(props) {
                             >
                               {(provided, snapshot) => {
                                 return (
-                                  <div
+                                  <div className="draggable"
                                     ref={provided.innerRef}
                                     {...provided.draggableProps}
                                     {...provided.dragHandleProps}

@@ -61,9 +61,17 @@ export default function Landing() {
     },[])
 
     return (
-
+        <div>
+            <NavBar/>
+            {/* <div className="phone">
+                <h1 className='mattPhone'>Matt Braly</h1>
+                <h2 className="phoneH2">I am a <a className="phoneA"href="http://www.mattbraly.biz/pro">Professional</a>,
+                <a className="phoneA" href="http://www.mattbraly.biz/randomarm">Dog Loving</a>,
+                <a className="phoneA" href="http://www.mattbraly.biz/cia">Geopolitical</a>
+                Full Stack Developer</h2>
+            </div> */}
         <div className="big">
-        <NavBar/>
+        
         <h1 className='matt'>Matt Braly</h1>
         <div className='container grid'>
             <h2 className='left'>I am a</h2>
@@ -78,7 +86,9 @@ export default function Landing() {
             </div>
         <h2 className='right'>Full Stack Developer</h2>
         </div>
+        
         {/* <a className='goButton' href={`${direction}`} onClick={getDirection}>Go</a> */}
+        </div>
         </div>
     )
 }
